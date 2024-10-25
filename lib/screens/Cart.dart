@@ -107,20 +107,20 @@ class Cart extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Total'),
-                    Text(
-                      '£248.00',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
+                // const Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Text('Total'),
+                //     Text(
+                //       '£248.00',
+                //       style: TextStyle(
+                //         fontSize: 18,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                // const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -146,7 +146,8 @@ class Cart extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         fixedColor: Colors.lightGreen,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Catalog'),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
@@ -155,7 +156,8 @@ class Cart extends StatelessWidget {
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border_outlined), label: 'Favorites'),
-          BottomNavigationBarItem(icon: Icon(Icons.person_2_outlined), label: 'Profile'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_2_outlined), label: 'Profile'),
         ],
       ),
     );
@@ -170,7 +172,9 @@ class Cart extends StatelessWidget {
             Icons.check_box,
             color: Colors.lightBlueAccent,
           ),
-          SizedBox(width: 10,),
+          SizedBox(
+            width: 10,
+          ),
           Container(
             width: 80,
             height: 80,
@@ -186,36 +190,41 @@ class Cart extends StatelessWidget {
           const SizedBox(width: 16),
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   name,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  price,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      price,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.remove),
+                          onPressed: () {},
+                        ),
+                        Text('$quantity'),
+                        IconButton(
+                          icon: const Icon(Icons.add),
+                          onPressed: () {},
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ],
             ),
           ),
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.remove),
-                onPressed: () {},
-              ),
-              Text('$quantity'),
-              IconButton(
-                icon: const Icon(Icons.add),
-                onPressed: () {},
-              ),
-            ],
-          ),
+
         ],
       ),
     );

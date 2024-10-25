@@ -172,11 +172,11 @@ class ProductDetail extends StatelessWidget {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'The Nintendo Switch gaming console is a compact device that can be taken everywhere. This portable super device is also equipped with 2 gamepads. ',
-                                    style: TextStyle(color: Colors.black, fontSize: 15),
+                                    style: TextStyle(color: Colors.black, fontSize: 18),
                                   ),
                                   TextSpan(
                                     text: 'Read more',
-                                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 15), // Bôi đen và định dạng cho chữ "Read more"
+                                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
                                   ),
                                 ],
                               ),
@@ -190,7 +190,6 @@ class ProductDetail extends StatelessWidget {
                 ),
               ),
 
-              // Add to Cart Button
               Padding(
                 padding: const EdgeInsets.all(14),
                 child: ElevatedButton(
@@ -211,7 +210,6 @@ class ProductDetail extends StatelessWidget {
               Center(
                 child: Text("Delivery on 26 October"),
               )
-
             ],
           ),
         ),

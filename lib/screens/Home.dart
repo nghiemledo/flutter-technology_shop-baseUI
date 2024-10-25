@@ -4,6 +4,7 @@ void main() => runApp(Home());
 
 class Home extends StatelessWidget {
   const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +97,7 @@ class Home extends StatelessWidget {
                   const Text(
                     'Categories',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -116,15 +117,13 @@ class Home extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-
-              // Category Icons
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildCategoryItem(Icons.phone_android, 'Phones'),
-                  _buildCategoryItem(Icons.gamepad, 'Consoles'),
-                  _buildCategoryItem(Icons.laptop, 'Laptops'),
-                  _buildCategoryItem(Icons.camera_alt, 'Cameras'),
+                  categoryComponent(Icons.phone_android, 'Phones'),
+                  categoryComponent(Icons.gamepad, 'Consoles'),
+                  categoryComponent(Icons.laptop, 'Laptops'),
+                  categoryComponent(Icons.camera_alt, 'Cameras'),
                 ],
               ),
               const SizedBox(height: 16),
@@ -136,7 +135,7 @@ class Home extends StatelessWidget {
                       const Text(
                         'Flash Sale',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -181,12 +180,12 @@ class Home extends StatelessWidget {
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   children: [
-                    _buildProductCard(
+                    productComponent(
                       'Apple iPhone 15 Pro',
                       '£899.00',
                       '£999.00',
                     ),
-                    _buildProductCard(
+                    productComponent(
                       'Samsung Galaxy Buds Pro',
                       '£89.00',
                       '£169.00',
@@ -227,7 +226,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryItem(IconData icon, String label) {
+  Widget categoryComponent(IconData icon, String label) {
     return Column(
       children: [
         Container(
@@ -247,7 +246,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget _buildProductCard(String title, String price, String originalPrice) {
+  Widget productComponent(String title, String price, String originalPrice) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.grey[300],
